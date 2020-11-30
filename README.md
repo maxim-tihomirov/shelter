@@ -1,5 +1,6 @@
 # shelter
-# https://maxim-tihomirov.github.io/shelter/pages/main/main.html
+## https://maxim-tihomirov.github.io/shelter/pages/main/main.html
 
 
-## Using: CSS, HTML, JavaScript
+* Using: CSS, HTML, JavaScript
+* Adaptive
