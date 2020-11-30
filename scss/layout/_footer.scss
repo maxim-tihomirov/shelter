@@ -1,0 +1,89 @@
+.footer{
+    padding-top: 4rem;
+    background: url(/assets/images/noise_transparent@2x.png),
+      radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+      &__wrapper{
+        display: flex;
+        justify-content: space-between;
+      }
+      &__contacts{
+        margin-top: 1.7rem;
+        margin-right: 11.8rem;
+        display: flex;
+        flex-direction: column;
+        width: 30rem;
+      }
+      &__title{
+        @include h3;
+        color: $color-light-xl;
+      }
+      &__item{
+        height: 4.5rem;
+        margin-top: 3.08rem;
+        display: flex;
+        align-items: center;
+      }
+      &__description{
+        margin-left: 2rem;
+        @include h4;
+        color: $color-primary;
+        text-decoration: none;
+        &:hover{
+          opacity: 0.5;
+        }
+      }
+  
+      &__image-box{
+        display: flex;
+        max-width: 30rem;
+      }
+      &__image{
+      }
+  }
+
+  @media (max-width: 1280px){
+    .footer{
+      padding-top: 3.2rem;
+      .wrapper{
+        flex-direction: column;
+        align-items: center;
+      }
+      &__wrapper{
+        width: 68rem;
+        justify-content: space-around;
+      }
+      &__contacts{
+        padding:0;
+        margin:0;
+      }
+      &__image-box{
+        margin-top: 5.7rem;
+      }
+      &__image{
+        width: 300px;
+      }
+    }
+  }
+
+  @media (max-width: 767px){
+    .footer{
+      &__title{
+        text-align: center;
+      }
+      &__wrapper{
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+      }
+      &__contacts{
+        margin-bottom: 3rem;
+      }
+      &__image-box{
+        margin-top: 5.6rem;
+        width: 260px;
+      }
+      &__image{
+        width: 260px;
+      }
+    }
+  }

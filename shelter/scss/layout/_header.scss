@@ -1,0 +1,134 @@
+.header {
+  width: 100%;
+  position: absolute;
+  top: 61px;
+}
+
+.wrapper {
+  display: flex;
+  max-width: 120rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  
+}
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  cursor: pointer;
+  transition: 1s;
+
+  &__title {
+    @include logo-title;
+    color: $color-primary;
+  }
+  &__subtitle {
+    @include logo-subtitle;
+    margin-top: 9px;
+    color: $color-light-xl;
+    text-align: center;
+  }
+}
+
+.menu {
+  width: 44.3rem;
+  display: flex;
+}
+.menu-list {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    font-size: 1.5rem;
+    line-height: 160%;
+    font-family: Arial;
+    text-decoration: none;
+    color: $color-dark-s;
+  }
+  &__link:hover {
+    color: $color-light-xl;
+  }
+  &__link_active {
+    color: $color-light-s;
+    border-bottom: 3px solid #f1cdb3;
+  }
+}
+
+.burger{
+  justify-content: space-between;
+  align-items: center;
+  height: 2.2rem;
+  display: none;
+  flex-direction: column;
+  margin-right: 4.3rem;
+  cursor: pointer;
+  z-index: 1000;
+  &__i{
+    width: 3rem;
+    border-bottom: 2px solid $color-primary
+  }
+  &:hover{
+    opacity: 0.5;
+  }
+  &:active{
+    opacity: 1;
+  }
+}
+
+//---------Animation---------------
+.burger-active{
+  transform: rotate(-90deg);
+  
+}
+.anim-burger{
+  animation: 1s ease-in-out rotate-burger;
+}
+.anim-burger-reverse{
+  animation: 1s ease-in-out rotate-burger;
+  animation-direction: reverse;
+}
+
+@keyframes rotate-burger{
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(-90deg);
+  }
+}
+
+//---------End Animation---------------
+
+// -----------------------Media---------------------------
+
+@media (max-width: 1280px){
+  .header{
+    top: 3rem;
+  }
+ .wrapper{
+   width:92.1875%;
+   align-items: center;
+ }
+}
+
+@media (max-width: 767px){
+  .menu{
+    display: none;
+  }
+ .wrapper{
+   width: 93.75%;
+ }
+ .burger{
+   display: flex;
+ }
+
+}
+// ----------------------End Media-------------------------

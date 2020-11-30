@@ -1,0 +1,179 @@
+:root {
+  font-size: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+$color-primary: #f1cdb3;
+$color-primary-light: #fddcc4;
+
+$color-light-xl: #ffffff;
+$color-light-l: #f6f6f6;
+$color-light-s: #fafafa;
+
+$color-dark-s: #cdcdcd;
+$color-dark-m: #b2b2b2;
+$color-dark-l: #545454;
+$color-dark-xl: #4c4c4c;
+$color-dark-2xl: #444444;
+$color-dark-3xl: #292929;
+
+@mixin h2 {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 4.4rem;
+  }
+  line-height: 130%;
+}
+@mixin h3 {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 3.5rem;
+  }
+  line-height: 130%;
+  letter-spacing: 0.21rem;
+}
+@mixin h3-mobile {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 2.5rem;
+  }
+  line-height: 130%;
+  letter-spacing: 0.15rem;
+}
+@mixin h4 {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 2rem;
+  }
+  color: $color-dark-l;
+  line-height: 115%;
+  letter-spacing: 0.12rem;
+}
+@mixin h5 {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 1.5rem;
+  }
+  line-height: 110%;
+  letter-spacing: 0.09rem;
+}
+@mixin h5-modal-window {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: bold;
+    size: 1.5rem;
+  }
+  letter-spacing: 0.09rem;   
+  color: #000;
+}
+@mixin paragraph-l {
+  font: {
+    family: Arial;
+    style: normal;
+    weight: normal;
+    size: 1.5rem;
+  }
+  line-height: 160%;
+}
+@mixin paragraph-s {
+  font: {
+    family: Arial;
+    style: italic;
+    weight: normal;
+    size: 1.2rem;
+  }
+  line-height: 150%;
+}
+@mixin logo-title {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 3.2rem;
+  }
+  line-height: 110%;
+  letter-spacing: 0.18rem;
+}
+@mixin logo-subtitle {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 1.3rem;
+  }
+  line-height: 110%;
+  letter-spacing: 0.14rem;
+}
+@mixin slider-button {
+  margin-top: 3.8rem;
+  padding: 1.7rem;
+  box-shadow: inset 0 0 0 2px $color-primary;
+  border-radius: 100%;
+  background: none;
+  align-self: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary-light;
+    box-shadow: none;
+  }
+}
+@mixin button-primary {
+  background: $color-primary;
+  border-radius: 100px;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0.1rem;
+  color: $color-dark-3xl;
+  font-family: Georgia;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-primary-light;
+  }
+  &:active {
+    background: $color-primary;
+  }
+}
+@mixin button-secondary {
+  background: none;
+  border-radius: 100px;
+  border: 2px solid $color-primary;
+  font-size: 1.7rem;
+  line-height: 130%;
+  letter-spacing: 0.1rem;
+  color: $color-dark-3xl;
+  font-family: Georgia;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-primary-light;
+    border: none;
+  }
+  &:active {
+    background: $color-primary;
+  }
+}

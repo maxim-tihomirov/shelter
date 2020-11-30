@@ -1,0 +1,197 @@
+@import "../../scss/variables";
+@import "../../scss/layout/header";
+@import "../../scss/layout/footer";
+@import "../../scss/layout/menu";
+@import "../../scss/layout/popup";
+
+@mixin button_paginator_inactive($color) {
+  @include h4;
+  box-shadow: inset 0 0 0 2px $color;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  width: 52px;
+  height: 52px;
+  &:hover {
+    background-color: $color;
+    cursor: pointer;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 3rem;
+  z-index: 1000;
+
+  .header-logo {
+    &__title {
+      color: $color-dark-l;
+    }
+    &__subtitle {
+      color: $color-dark-3xl;
+    }
+  }
+  .menu-list {
+    &__link {
+      color: $color-dark-l;
+    }
+    &__link_active {
+      color: $color-dark-3xl;
+    }
+    &__item{
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+  
+}
+.burger{
+  &__i{
+    border-bottom: 2px solid #000;
+    transition: 1s;
+  }
+}
+.change-color{
+  border-color: $color-primary;
+}
+
+.mobile-menu{
+  position: fixed;
+}
+
+.pets {
+  margin-top: 12rem;
+  padding-top: 8.1rem;
+  background-color: $color-light-l;
+
+  .wrapper {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include h3;
+    color: $color-dark-l;
+    text-align: center;
+    span {
+      display: block;
+      letter-spacing: 0.2rem;
+    }
+  }
+
+  .pets-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    justify-content: space-between;
+
+    .pets-card {
+      display: flex;
+      flex-direction: column;
+      margin-top: 3rem;
+      background-color: $color-light-s;
+      border-radius: 9px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-light-xl;
+      }
+
+      &__image {
+        width: 100%;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+      }
+
+      &__title {
+        @include h4;
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      &__button {
+        @include button-secondary;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        width: 187px;
+        height: 52px;
+      }
+    }
+  }
+  .buttons-nav {
+    display: flex;
+    width: 34rem;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+
+    &__button_paginator {
+      @include button_paginator_inactive($color-primary);
+      &_active {
+        @include button_paginator_inactive($color-primary);
+        box-shadow: none;
+        background: $color-primary;
+        &:hover{  
+          cursor: default;
+        }
+      }
+      &_disabled {
+        @include button_paginator_inactive($color-dark-s);
+        &:hover{
+          background: none;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px){
+ .pets{
+   .pets-cards{
+     margin-top: 0;
+     overflow: hidden;
+     height: 140rem;
+     margin-bottom: 3.4rem;
+     justify-content: space-evenly;
+      width: 94%;
+   }
+   .buttons-nav{
+    margin-bottom: 7.6rem;
+   }
+ }
+ .footer{
+  padding-top: 1.6rem;
+ }
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+  .pets{
+    padding-top: 4.2rem;
+    
+    &__title{
+      @include h3-mobile;
+      span{
+        letter-spacing: inherit;
+      }
+    }
+    .pets-cards{
+      margin-top: 1.2rem;
+      margin-bottom: 3.7rem;
+      .pets-card{
+        margin-top: 3.05rem;
+      }
+    }
+    .buttons-nav{
+      margin-bottom: 4.1rem;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+.popup-wrapper{
+    width: 95.2rem;
+    height: 55.2rem;
+    position: fixed;
+    display: none;
+    z-index:101;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+  }
+  .btn-close{
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    @include slider-button;
+    width: 5.2rem;
+    height: 5.2rem;
+    padding: 0;
+    margin: 0;
+    z-index: inherit;
+  }
+  .popup{                                   //!popup
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90rem;
+    height: 50rem;
+    display: flex; 
+    background: $color-light-s;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    border-radius: 9px;
+    //overflow: hidden;
+  
+    &__image{
+      width: 50rem;
+    }
+    &__image > img {
+      width: 100%;
+    }
+    &__content{
+      width: 42.5%;//38.1rem;
+      padding-top: 5rem;
+      padding-left: 2.9rem;
+    }
+    &__name{
+      @include h3;
+    }
+    &__type{
+      @include h4;
+      margin-top: 1rem;
+      color: #000;
+    }
+    &__description{
+      @include h5;
+      margin-top: 4rem;
+    }
+    .popup-details{
+      margin-top: 4rem;
+  
+      &__item:before{
+        color: $color-primary;
+        content: "\2022";
+        padding-right: 1rem;
+      }
+      &__item{
+        list-style-type: none; 
+        @include h5-modal-window;
+        line-height: 160%;
+        &_normal{
+          font-weight: normal;
+        }
+      }
+      
+      
+    }
+  }
+  
+  .active{
+    display: flex;
+  }
+
+
+  // -----------------------Media---------------------------
+
+@media (max-width: 1280px){
+ 
+    .popup-wrapper{
+        width: 68.2rem;
+        height: 40.2rem;
+      }
+      .popup{
+        width: 63rem;
+        height: auto;
+    
+        &__image{
+          width: 35rem;
+        }
+        &__content{
+          padding-left: 1.1rem;
+          padding-top: 1rem;
+        }
+        &__description{
+          margin-top: 2rem;
+          font-size: 1.3rem;
+        }
+        .popup-details{
+          margin-top: 2rem;
+        }
+      }
+}
+
+
+@media (max-width: 767px){
+    .btn-close{
+        right: 0;
+      }
+      .popup-wrapper{
+        width: 27.1rem;
+        height: 39.3rem;
+      }
+      .popup{
+        width: 24rem;
+        height: 34.1rem;
+      
+        &__image{
+          display: none;
+        }
+        &__content{
+          width:100%;
+          padding: 1rem;
+        }
+        &__name{
+          text-align: center;
+        }
+        &__type{
+          text-align: center;
+        }
+        &__description{
+          text-align: justify;
+          letter-spacing: 0.07rem;
+        }
+        .popup-details{
+          margin-top: 2.4rem;
+        }
+      }
+}
+// ----------------------End Media-------------------------
+
